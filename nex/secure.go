@@ -43,7 +43,7 @@ func StartSecureServer() {
 
 	registerCommonSecureServerProtocols()
 
-	port, _ := strconv.Atoi(os.Getenv("PN_SONIC_SECURE_SERVER_PORT"))
+	port, _ := strconv.Atoi(os.Getenv("PN_SASRTWIIU_SECURE_SERVER_PORT"))
 
 	globals.SecureServer.Listen(port)
 }

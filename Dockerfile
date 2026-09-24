@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
 	go mod download -x
 
 COPY . .
-ARG BUILD_STRING=pretendo.transformedwiiu.docker
+ARG BUILD_STRING=pretendo.sonic-all-stars-racing-transformed-wiiu.docker
 RUN --mount=type=cache,target=/go/pkg/mod/ \
 	CGO_ENABLED=0 go build -ldflags "-X 'main.serverBuildString=${BUILD_STRING}'" -v -o ${app_dir}/build/server
 

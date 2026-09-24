@@ -29,16 +29,16 @@ func init() {
 		globals.Logger.Warning("Error loading .env file")
 	}
 
-	authenticationServerPort := os.Getenv("PN_SONIC_AUTHENTICATION_SERVER_PORT")
-	secureServerHost := os.Getenv("PN_SONIC_SECURE_SERVER_HOST")
-	secureServerPort := os.Getenv("PN_SONIC_SECURE_SERVER_PORT")
-	accountGRPCHost := os.Getenv("PN_SONIC_ACCOUNT_GRPC_HOST")
-	accountGRPCPort := os.Getenv("PN_SONIC_ACCOUNT_GRPC_PORT")
-	accountGRPCAPIKey := os.Getenv("PN_SONIC_ACCOUNT_GRPC_API_KEY")
-	friendsGRPCHost := os.Getenv("PN_SONIC_FRIENDS_GRPC_HOST")
-	friendsGRPCPort := os.Getenv("PN_SONIC_FRIENDS_GRPC_PORT")
-	friendsGRPCAPIKey := os.Getenv("PN_SONIC_FRIENDS_GRPC_API_KEY")
-	healthCheckPort := os.Getenv("PN_SONIC_HEALTH_CHECK_PORT")
+	authenticationServerPort := os.Getenv("PN_SASRTWIIU_AUTHENTICATION_SERVER_PORT")
+	secureServerHost := os.Getenv("PN_SASRTWIIU_SECURE_SERVER_HOST")
+	secureServerPort := os.Getenv("PN_SASRTWIIU_SECURE_SERVER_PORT")
+	accountGRPCHost := os.Getenv("PN_SASRTWIIU_ACCOUNT_GRPC_HOST")
+	accountGRPCPort := os.Getenv("PN_SASRTWIIU_ACCOUNT_GRPC_PORT")
+	accountGRPCAPIKey := os.Getenv("PN_SASRTWIIU_ACCOUNT_GRPC_API_KEY")
+	friendsGRPCHost := os.Getenv("PN_SASRTWIIU_FRIENDS_GRPC_HOST")
+	friendsGRPCPort := os.Getenv("PN_SASRTWIIU_FRIENDS_GRPC_PORT")
+	friendsGRPCAPIKey := os.Getenv("PN_SASRTWIIU_FRIENDS_GRPC_API_KEY")
+	healthCheckPort := os.Getenv("PN_SASRTWIIU_HEALTH_CHECK_PORT")
 
 	kerberosPassword := make([]byte, 0x10)
 	_, err = rand.Read(kerberosPassword)
@@ -52,81 +52,81 @@ func init() {
 	globals.InitAccounts()
 
 	if strings.TrimSpace(authenticationServerPort) == "" {
-		globals.Logger.Error("PN_SONIC_AUTHENTICATION_SERVER_PORT environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_AUTHENTICATION_SERVER_PORT environment variable not set")
 		os.Exit(0)
 	}
 
 	if port, err := strconv.Atoi(authenticationServerPort); err != nil {
-		globals.Logger.Errorf("PN_SONIC_AUTHENTICATION_SERVER_PORT is not a valid port. Expected 0-65535, got %s", authenticationServerPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_AUTHENTICATION_SERVER_PORT is not a valid port. Expected 0-65535, got %s", authenticationServerPort)
 		os.Exit(0)
 	} else if port < 0 || port > 65535 {
-		globals.Logger.Errorf("PN_SONIC_AUTHENTICATION_SERVER_PORT is not a valid port. Expected 0-65535, got %s", authenticationServerPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_AUTHENTICATION_SERVER_PORT is not a valid port. Expected 0-65535, got %s", authenticationServerPort)
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(secureServerHost) == "" {
-		globals.Logger.Error("PN_SONIC_SECURE_SERVER_HOST environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_SECURE_SERVER_HOST environment variable not set")
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(secureServerPort) == "" {
-		globals.Logger.Error("PN_SONIC_SECURE_SERVER_PORT environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_SECURE_SERVER_PORT environment variable not set")
 		os.Exit(0)
 	}
 
 	if port, err := strconv.Atoi(secureServerPort); err != nil {
-		globals.Logger.Errorf("PN_SONIC_SECURE_SERVER_PORT is not a valid port. Expected 0-65535, got %s", secureServerPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_SECURE_SERVER_PORT is not a valid port. Expected 0-65535, got %s", secureServerPort)
 		os.Exit(0)
 	} else if port < 0 || port > 65535 {
-		globals.Logger.Errorf("PN_SONIC_SECURE_SERVER_PORT is not a valid port. Expected 0-65535, got %s", secureServerPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_SECURE_SERVER_PORT is not a valid port. Expected 0-65535, got %s", secureServerPort)
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(accountGRPCHost) == "" {
-		globals.Logger.Error("PN_SONIC_ACCOUNT_GRPC_HOST environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_ACCOUNT_GRPC_HOST environment variable not set")
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(accountGRPCPort) == "" {
-		globals.Logger.Error("PN_SONIC_ACCOUNT_GRPC_PORT environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_ACCOUNT_GRPC_PORT environment variable not set")
 		os.Exit(0)
 	}
 
 	accountPort, err := strconv.Atoi(accountGRPCPort)
 	if err != nil {
-		globals.Logger.Errorf("PN_SONIC_ACCOUNT_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_ACCOUNT_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
 		os.Exit(0)
 	} else if accountPort < 0 || accountPort > 65535 {
-		globals.Logger.Errorf("PN_SONIC_ACCOUNT_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_ACCOUNT_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(accountGRPCAPIKey) == "" {
-		globals.Logger.Warning("Insecure gRPC server detected. PN_SONIC_ACCOUNT_GRPC_API_KEY environment variable not set")
+		globals.Logger.Warning("Insecure gRPC server detected. PN_SASRTWIIU_ACCOUNT_GRPC_API_KEY environment variable not set")
 	}
 
 	common_globals.ConnectToAccountGRPC(accountGRPCHost, uint16(accountPort), accountGRPCAPIKey)
 
 	if strings.TrimSpace(friendsGRPCHost) == "" {
-		globals.Logger.Error("PN_SONIC_FRIENDS_GRPC_HOST environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_FRIENDS_GRPC_HOST environment variable not set")
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(friendsGRPCPort) == "" {
-		globals.Logger.Error("PN_SONIC_FRIENDS_GRPC_PORT environment variable not set")
+		globals.Logger.Error("PN_SASRTWIIU_FRIENDS_GRPC_PORT environment variable not set")
 		os.Exit(0)
 	}
 
 	if port, err := strconv.Atoi(friendsGRPCPort); err != nil {
-		globals.Logger.Errorf("PN_SONIC_FRIENDS_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_FRIENDS_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
 		os.Exit(0)
 	} else if port < 0 || port > 65535 {
-		globals.Logger.Errorf("PN_SONIC_FRIENDS_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_FRIENDS_GRPC_PORT is not a valid port. Expected 0-65535, got %s", accountGRPCPort)
 		os.Exit(0)
 	}
 
 	if strings.TrimSpace(friendsGRPCAPIKey) == "" {
-		globals.Logger.Warning("Insecure gRPC server detected. PN_SONIC_FRIENDS_GRPC_API_KEY environment variable not set")
+		globals.Logger.Warning("Insecure gRPC server detected. PN_SASRTWIIU_FRIENDS_GRPC_API_KEY environment variable not set")
 	}
 
 	globals.GRPCFriendsClientConnection, err = grpc.Dial(fmt.Sprintf("%s:%s", friendsGRPCHost, friendsGRPCPort), grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -140,7 +140,7 @@ func init() {
 		"X-API-Key", friendsGRPCAPIKey,
 	)
 
-	globals.Postgres, err = sql.Open("postgres", os.Getenv("PN_SONIC_POSTGRES_URI"))
+	globals.Postgres, err = sql.Open("postgres", os.Getenv("PN_SASRTWIIU_POSTGRES_URI"))
 	if err != nil {
 		globals.Logger.Critical(err.Error())
 	}
@@ -148,12 +148,12 @@ func init() {
 	globals.Logger.Success("Connected to Postgres!")
 
 	if strings.TrimSpace(healthCheckPort) == "" {
-		globals.Logger.Warning("Basic UDP health check will not be enabled. PN_SONIC_HEALTH_CHECK_PORT environment variable not set")
+		globals.Logger.Warning("Basic UDP health check will not be enabled. PN_SASRTWIIU_HEALTH_CHECK_PORT environment variable not set")
 	} else if port, err := strconv.Atoi(healthCheckPort); err != nil {
-		globals.Logger.Errorf("PN_SONIC_HEALTH_CHECK_PORT is not a valid port. Expected 0-65535, got %s", healthCheckPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_HEALTH_CHECK_PORT is not a valid port. Expected 0-65535, got %s", healthCheckPort)
 		os.Exit(0)
 	} else if port < 0 || port > 65535 {
-		globals.Logger.Errorf("PN_SONIC_HEALTH_CHECK_PORT is not a valid port. Expected 0-65535, got %s", healthCheckPort)
+		globals.Logger.Errorf("PN_SASRTWIIU_HEALTH_CHECK_PORT is not a valid port. Expected 0-65535, got %s", healthCheckPort)
 		os.Exit(0)
 	} else {
 		nex.EnableBasicUDPHealthCheck(port)

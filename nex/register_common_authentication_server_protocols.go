@@ -16,11 +16,11 @@ func registerCommonAuthenticationServerProtocols() {
 	commonTicketGrantingProtocol := commonticketgranting.NewCommonProtocol(ticketGrantingProtocol)
 	commonTicketGrantingProtocol.ConfigurePNValidation([]string{"10111F00"})
 
-	port, _ := strconv.Atoi(os.Getenv("PN_SONIC_SECURE_SERVER_PORT"))
+	port, _ := strconv.Atoi(os.Getenv("PN_SASRTWIIU_SECURE_SERVER_PORT"))
 
 	secureStationURL := types.NewStationURL("")
 	secureStationURL.SetURLType(constants.StationURLPRUDPS)
-	secureStationURL.SetAddress(os.Getenv("PN_SONIC_SECURE_SERVER_HOST"))
+	secureStationURL.SetAddress(os.Getenv("PN_SASRTWIIU_SECURE_SERVER_HOST"))
 	secureStationURL.SetPortNumber(uint16(port))
 	secureStationURL.SetConnectionID(1)
 	secureStationURL.SetPrincipalID(types.NewPID(2))

@@ -8,7 +8,7 @@ Install [Go](https://go.dev/doc/install) and [git](https://git-scm.com/downloads
 
 ```bash
 $ git clone https://github.com/PretendoNetwork/sonic-all-stars-racing-transformed-wiiu
-$ cd SONIC
+$ cd sonic-all-stars-racing-transformed-wiiu
 ```
 
 ### Compiling using `go`
@@ -17,10 +17,10 @@ To compile using Go, `go get` the required modules and then `go build` to your d
 ```bash
 $ go get 
 $ go mod tidy
-$ go build -o build/transformedwiiu
+$ go build -o build/sonic-all-stars-racing-transformed-wiiu
 ```
 
-The server is now built to `build/transformedwiiu`
+The server is now built to `build/sonic-all-stars-racing-transformed-wiiu`
 
 When compiling with only Go, the authentication servers build string is not automatically set. This should not cause any issues with gameplay, but it means that the server build will not be visible in any packet dumps or logs a title may produce
 
@@ -35,7 +35,7 @@ Install `make` onto your system (this varies by OS), and run `make` while inside
 $ make
 ```
 
-The server is now built to `build/transformedwiiu` with the authentication server build string already set
+The server is now built to `build/sonic-all-stars-racing-transformed-wiiu` with the authentication server build string already set
 
 ### Developing core libraries
 This server depends on [nex-protocols-common-go](https://github.com/PretendoNetwork/nex-protocols-common-go),
@@ -68,14 +68,14 @@ All configuration options are handled via environment variables
 
 | Name                                      | Description                                                                                     | Required                                      |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| `PN_SONIC_POSTGRES_URI`               | Fully qualified URI to your Postgres server (Example `postgres://username:password@localhost/transformedwiiu?sslmode=disable`)  | Yes                                           |
-| `PN_SONIC_AUTHENTICATION_SERVER_PORT` | Port for the authentication server                                                              | Yes                                           |
-| `PN_SONIC_SECURE_SERVER_HOST`         | Host name for the secure server (should point to the same address as the authentication server) | Yes                                           |
-| `PN_SONIC_SECURE_SERVER_PORT`         | Port for the secure server                                                                      | Yes                                           |
-| `PN_SONIC_ACCOUNT_GRPC_HOST`          | Host name for your account server gRPC service                                                  | Yes                                           |
-| `PN_SONIC_ACCOUNT_GRPC_PORT`          | Port for your account server gRPC service                                                       | Yes                                           |
-| `PN_SONIC_ACCOUNT_GRPC_API_KEY`       | API key for your account server gRPC service                                                    | No (Assumed to be an open gRPC API)           |
-| `PN_SONIC_FRIENDS_GRPC_HOST`          | Host name for Friends gRPC service (used for friends matchmaking)                               | Yes                                           |
-| `PN_SONIC_FRIENDS_GRPC_PORT`          | Port for Friends gRPC service                                                                   | Yes                                           |
-| `PN_SONIC_FRIENDS_GRPC_API_KEY`       | API key for Friends gRPC service                                                                | No (Assumed to be an open gRPC API)|
-| `PN_SONIC_HEALTH_CHECK_PORT`          | Port for the UDP health check                                                                                       | No
+| `PN_SASRTWIIU_POSTGRES_URI`               | Fully qualified URI to your Postgres server (Example `postgres://username:password@localhost/sasrtwiiu?sslmode=disable`)  | Yes                                           |
+| `PN_SASRTWIIU_AUTHENTICATION_SERVER_PORT` | Port for the authentication server                                                              | Yes                                           |
+| `PN_SASRTWIIU_SECURE_SERVER_HOST`         | Host name for the secure server (should point to the same address as the authentication server) | Yes                                           |
+| `PN_SASRTWIIU_SECURE_SERVER_PORT`         | Port for the secure server                                                                      | Yes                                           |
+| `PN_SASRTWIIU_ACCOUNT_GRPC_HOST`          | Host name for your account server gRPC service                                                  | Yes                                           |
+| `PN_SASRTWIIU_ACCOUNT_GRPC_PORT`          | Port for your account server gRPC service                                                       | Yes                                           |
+| `PN_SASRTWIIU_ACCOUNT_GRPC_API_KEY`       | API key for your account server gRPC service                                                    | No (Assumed to be an open gRPC API)           |
+| `PN_SASRTWIIU_FRIENDS_GRPC_HOST`          | Host name for Friends gRPC service (used for friends matchmaking)                               | Yes                                           |
+| `PN_SASRTWIIU_FRIENDS_GRPC_PORT`          | Port for Friends gRPC service                                                                   | Yes                                           |
+| `PN_SASRTWIIU_FRIENDS_GRPC_API_KEY`       | API key for Friends gRPC service                                                                | No (Assumed to be an open gRPC API)|
+| `PN_SASRTWIIU_HEALTH_CHECK_PORT`          | Port for the UDP health check                                                                                       | No

@@ -1,5 +1,0 @@
-go 1.25.0
-
-replace github.com/PretendoNetwork/nex-protocols-go/v2 => "../../libraries/nex-protocols-go"
-replace github.com/PretendoNetwork/nex-protocols-common-go/v2 => "../../libraries/nex-protocols-common-go"
-use .
